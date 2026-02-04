@@ -1,10 +1,10 @@
-#Hands-on L3: Containers with Docker
+## Hands-on L3: Containers with Docker
 
-#Objective
+## Objective
 
 This hands-on exercise demonstrates how to install Docker Desktop and deploy a multi-container microservice application using Docker and Docker Compose. The application consists of a Python Flask web service, a Redis cache, and a PostgreSQL database running in a Docker container.
 
-#Tools and Technologies
+## Tools and Technologies
 ```
 - Docker Desktop
 - Docker Compose
@@ -14,7 +14,7 @@ This hands-on exercise demonstrates how to install Docker Desktop and deploy a m
 - GitHub
 ```
 
-#Project Structure
+## Project Structure
 ```
 .
 ├── app.py
@@ -24,11 +24,11 @@ This hands-on exercise demonstrates how to install Docker Desktop and deploy a m
 ├── README.md
 ```
 
-##Docker Installation and Verification
+## Docker Installation and Verification
 
 Docker Desktop was installed based on the operating system.
 
-#PostgreSQL Setup Using Docker
+## PostgreSQL Setup Using Docker
 
 Pull the PostgreSQL image:
 
@@ -44,14 +44,14 @@ Connect to PostgreSQL using psql:
 
 ```psql -d postgres -U postgres```
 
-##Flask and Redis Application
-#requirements.txt
+## Flask and Redis Application
+## requirements.txt
 ```
 flask
 redis
 ```
 
-#app.py
+## app.py
 ```
 import time
 import redis
@@ -78,7 +78,7 @@ def hello():
  ```
 
 
-#Dockerfile
+## Dockerfile
 ```
 FROM python:3.7-alpine
 
@@ -99,7 +99,7 @@ COPY . .
 CMD ["flask", "run"]
 ```
 
-#Docker Compose Configuration
+## Docker Compose Configuration
 ```
 version: "3.9"
 
@@ -117,7 +117,7 @@ services:
 
 
 
-#Running the Application
+## Running the Application
 
 Build and start the containers:
 
@@ -131,7 +131,7 @@ Expected output:
 
 ```Hello World! I have been seen X times.```
 
-#Errors Faced and Issues Logged
+## Errors Faced and Issues Logged
 
 During the initial execution, the application failed to start due to intentionally introduced errors in the starter code. These included:
 
@@ -141,12 +141,26 @@ Application not accessible on localhost
 
 All errors were documented and tracked using the GitHub Issues feature, along with resolution comments after fixes were applied.
 
-##Screenshots
+## Screenshots
 
 Containers on Docker Desktop:
 ![Docker Desktop](https://github.com/user-attachments/assets/065c3ba7-7ed4-43bb-8eea-45d7be738deb)
 
 Expected Output:
 ![Output](https://github.com/user-attachments/assets/bcf0938d-157d-438c-a701-63cba0a31b30)
+
+## Learning Outcomes
+
+After completing this hands-on exercise, I was able to:
+
+- Install and verify Docker Desktop on my system
+- Run PostgreSQL as a container using Docker
+- Build and containerize a Python Flask web application
+- Use Redis as a caching service in a multi-container setup
+- Configure and run multiple services using Docker Compose
+- Understand container networking and service dependencies
+- Debug container startup issues and rebuild Docker images
+- Document errors and resolutions using GitHub Issues
+
 
 
